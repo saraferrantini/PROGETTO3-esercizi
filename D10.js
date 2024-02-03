@@ -142,9 +142,9 @@ console.log(randomNumber);
 */
 
 let me = {
-  name: "il tuo nome",
-  surname: "il tuo cognome",
-  age: "la tua età",
+  name: "Sara",
+  surname: "Ferrantini",
+  age: 34,
 };
 
 console.log(me);
@@ -160,7 +160,7 @@ console.log(me);
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
 */
 
-me.skills = ["JavaScript"]; //Aggiungo un array di skills all'oggetto
+me.skills = ["Javascript"]; //Aggiungo un array di skills all'oggetto
 
 console.log(me);
 
@@ -188,8 +188,7 @@ function dice() {
   return Math.floor(Math.random() * 6) + 1;
 }
 
-let risultato = dice();
-console.log(risultato);
+console.log(dice());
 
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
@@ -265,6 +264,18 @@ console.log(risultato);
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
+function isThisAnEmail(stringa) {
+  let booleano = false;
+  for (let i = 0; i <= stringa.length - 1; i++) {
+    if (stringa[i] === "@") {
+      booleano = true;
+    }
+  }
+  return booleano;
+}
+
+console.log(isThisAnEmail("prova@gmail.com"));
+
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
@@ -299,16 +310,30 @@ console.log(risultato);
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
+function howManyDays(data) {
+  let dataOdierna = new Date();
+  let differenzaGiorni = dataOdierna - data;
+  console.log(differenzaGiorni);
+  console.log(dataOdierna);
+  console.log(data);
+}
+
+let anno = 2000;
+let mese = 1;
+let giorno = 31;
+let passDate = new Date(anno, mese, giorno);
+
+howManyDays(passDate);
 
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
 
 function isTodayMyBirthday() {
-  var today = new Date(); // //  la data corrente
+  let today = new Date(); // //  la data corrente
 
   // Confronto giorno e mese per verificare se è il mio compleanno
-  return today.getDate() === 8 && today.getMonth() === 2 - 1;
+  return today.getDate() === 3 && today.getMonth() === 2 - 1;
 }
 
 // Esempio
@@ -344,6 +369,7 @@ console.log(newDog);
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
 
+let annoZero = 0;
 function newestMovie() {}
 
 /* ESERCIZIO 13
