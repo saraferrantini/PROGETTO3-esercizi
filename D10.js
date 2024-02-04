@@ -307,6 +307,19 @@ console.log(risultato);
   }
 */
 
+function rollTheDices(numero) {
+  let oggetto = { somma: 0, estrazioni: [] };
+  for (let i = 0; i < numero; i++) {
+    let variabileAppoggio = dice();
+    oggetto.somma += variabileAppoggio;
+    oggetto.estrazioni.push(variabileAppoggio);
+  }
+  return oggetto;
+}
+
+risultato = rollTheDices(10);
+console.log(risultato);
+
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
